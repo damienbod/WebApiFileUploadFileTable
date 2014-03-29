@@ -34,7 +34,6 @@ namespace WebAPIDocumentationHelp.Controllers
                 Description = streamProvider.FormData["description"],
                 CreatedTimestamp = DateTime.UtcNow,
                 UpdatedTimestamp = DateTime.UtcNow, 
-                DownloadLink = "TODO, will implement when file is persisited"
             };
             return _fileRepository.AddFileDescriptions(files);
         }

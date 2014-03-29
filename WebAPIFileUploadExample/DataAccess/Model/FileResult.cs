@@ -9,7 +9,6 @@ namespace DataAccess.Model
         public string Description { get; set; }
         public DateTime CreatedTimestamp { get; set; }
         public DateTime UpdatedTimestamp { get; set; }
-        public string DownloadLink { get; set; }
         public List<string> ContentTypes { get; set; }
         public List<string> Names { get; set; }
     }
