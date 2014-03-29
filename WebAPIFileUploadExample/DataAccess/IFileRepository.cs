@@ -1,9 +1,12 @@
-﻿using DataAccess.Model;
+﻿using System.Collections.Generic;
+using DataAccess.Model;
 
 namespace DataAccess
 {
     public interface IFileRepository
     {
-        void AddFileDescriptions(FileResult fileResult);
+        IEnumerable<FileDescriptionShort> AddFileDescriptions(FileResult fileResult);
+
+        IEnumerable<FileDescriptionShort> GetAllFiles();
     }
 }

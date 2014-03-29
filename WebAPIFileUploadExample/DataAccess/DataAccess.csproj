@@ -50,6 +50,7 @@
     <Compile Include="FileRepository.cs" />
     <Compile Include="IFileRepository.cs" />
     <Compile Include="Model\FileDescription.cs" />
+    <Compile Include="Model\FileDescriptionShort.cs" />
     <Compile Include="Model\FileResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -19,7 +20,7 @@ namespace WebAPIDocumentationHelp.Controllers
         [Route("files")]
         [HttpPost]
         [ValidateMimeMultipartContentFilter]
-        public async Task<FileResult> UploadFiles()
+        public async Task<IEnumerable<FileDescriptionShort>> UploadFiles()
         {
             var streamProvider = new MultipartFormDataStreamProvider(ServerUploadFolder);
             await Request.Content.ReadAsMultipartAsync(streamProvider);
@@ -35,8 +36,7 @@ namespace WebAPIDocumentationHelp.Controllers
                 UpdatedTimestamp = DateTime.UtcNow, 
                 DownloadLink = "TODO, will implement when file is persisited"
             };
-            _fileRepository.AddFileDescriptions(files);
-            return files;
+            return _fileRepository.AddFileDescriptions(files);
         }
     }
 }

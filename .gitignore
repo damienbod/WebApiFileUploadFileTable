@@ -7,3 +7,5 @@ WebAPIFileUploadExample/WebAPIFileUpload.v11.suo
 WebAPIFileUploadExample/ConsoleClient/obj/Debug
 WebAPIFileUploadExample/ConsoleClient/bin
 WebAPIFileUploadExample/MvcWebApi/MvcWebApi.csproj.user
+WebAPIFileUploadExample/DataAccess/bin
+WebAPIFileUploadExample/DataAccess/obj
