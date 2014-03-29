@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Web.Mvc;
 using DataAccess;
 using DataAccess.Model;
@@ -39,7 +34,5 @@ namespace MvcWebApi.Controllers
             var model = new AllUploadedFiles {FileShortDescriptions = fileRepository.GetAllFiles().ToList()};
             return View(model);
         }
-
-       
     }
 }
