@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace DataAccess.Model
+{
+    public class FileResult
+    {
+        public List<string> FileNames { get; set; }
+        public string Description { get; set; }
+        public DateTime CreatedTimestamp { get; set; }
+        public DateTime UpdatedTimestamp { get; set; }
+        public string DownloadLink { get; set; }
+        public List<string> ContentTypes { get; set; }
+        public List<string> Names { get; set; }
+    }
+}
