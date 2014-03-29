@@ -1,5 +1,11 @@
-﻿namespace DataAccess.Model
+﻿using System.Collections.Generic;
+
+namespace DataAccess.Model
 {
+    public class AllUploadedFiles
+    {
+        public List<FileDescriptionShort> FileShortDescriptions { get; set; }
+    }
     public class FileDescriptionShort
     {
         public int Id { get; set; }

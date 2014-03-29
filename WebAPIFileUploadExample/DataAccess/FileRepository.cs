@@ -48,6 +48,12 @@ namespace DataAccess
                     t => new FileDescriptionShort {Name = t.Name, Id = t.Id, Description = t.Description});
         }
 
+        public FileDescription GetFileDescription(int id)
+        {
+            return _context.FileDescriptions.Single(t => t.Id == id);
+        }
+
+
         public void Dispose()
         {
             if (_context != null)

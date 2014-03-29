@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
 using DataAccess;
@@ -36,6 +37,27 @@ namespace WebAPIDocumentationHelp.Controllers
                 UpdatedTimestamp = DateTime.UtcNow, 
             };
             return _fileRepository.AddFileDescriptions(files);
+        }
+
+        [Route("download/{id}")]
+        [HttpGet]
+        public HttpResponseMessage Download(int id)
+        {
+            var fileDescription = _fileRepository.GetFileDescription(id);
+
+            var path = ServerUploadFolder + "\\" + fileDescription.FileName;
+            var result = new HttpResponseMessage(HttpStatusCode.OK);
+            var stream = new FileStream(path, FileMode.Open);
+            result.Content = new StreamContent(stream);
+            result.Content.Headers.ContentType = new MediaTypeHeaderValue(fileDescription.ContentType);
+            return result;
+        }
+
+        [Route("all")]
+        [HttpGet]
+        public IEnumerable<FileDescriptionShort> GetAllFiles()
+        {
+            return _fileRepository.GetAllFiles();
         }
     }
 }

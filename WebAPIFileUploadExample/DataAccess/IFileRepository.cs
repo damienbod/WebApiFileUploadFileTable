@@ -8,5 +8,7 @@ namespace DataAccess
         IEnumerable<FileDescriptionShort> AddFileDescriptions(FileResult fileResult);
 
         IEnumerable<FileDescriptionShort> GetAllFiles();
+
+        FileDescription GetFileDescription(int id);
     }
 }
