@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\LifecycleSingletonAttribute.cs" />
+    <Compile Include="Attributes\LifecycleTransientAttribute.cs" />
     <Compile Include="FileContext.cs" />
     <Compile Include="FileRepository.cs" />
     <Compile Include="IFileRepository.cs" />

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using DataAccess.Model;
 
-namespace WebAPIDocumentationHelp.Models
+namespace WebAPIFileUploadExample.Models
 {
     public class FileInformation
     {

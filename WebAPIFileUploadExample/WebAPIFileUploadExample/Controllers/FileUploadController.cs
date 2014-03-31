@@ -10,13 +10,18 @@ using System.Web.Http;
 using DataAccess;
 using DataAccess.Model;
 
-namespace WebAPIDocumentationHelp.Controllers
+namespace WebAPIFileUploadExample.Controllers
 {
     [RoutePrefix("api/test")]
     public class FileUploadController : ApiController
     {
-        private IFileRepository _fileRepository = new FileRepository();
+        private readonly IFileRepository _fileRepository;
         private static readonly string ServerUploadFolder = "\\\\N275\\mssqlserver\\WebApiFileTable\\WebApiUploads_Dir"; //Path.GetTempPath();
+
+        public FileUploadController(IFileRepository fileRepository)
+        {
+            _fileRepository = fileRepository;
+        }
 
         [Route("files")]
         [HttpPost]

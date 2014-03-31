@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DataAccess.Attributes;
 using DataAccess.Model;
 
 namespace DataAccess
 {
+    [LifecycleTransient]
     public class FileRepository : IFileRepository, IDisposable
     {
         private FileContext _context;

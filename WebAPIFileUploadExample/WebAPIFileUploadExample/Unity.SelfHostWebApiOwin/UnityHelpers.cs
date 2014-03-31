@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using DataAccess.Attributes;
 using Microsoft.Practices.Unity;
 using System.Linq;
 
@@ -41,21 +42,21 @@ namespace Unity.SelfHostWebApiOwin
         public static void RegisterTypes(IUnityContainer container)
         {
 		    // Add your register logic here...
-            // var myAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.StartsWith("your_assembly_Name")).ToArray();
+            var myAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.StartsWith("DataAccess")).ToArray();
 
             container.RegisterType(typeof(Startup));
 
-            // container.RegisterTypes(
-            //     UnityHelpers.GetTypesWithCustomAttribute<ContainerControlledAttribute>(myAssemblies),
-            //     WithMappings.FromMatchingInterface,
-            //     WithName.Default,
-            //     WithLifetime.ContainerControlled,
-            //     null
-            //    ).RegisterTypes(
-            //             UnityHelpers.GetTypesWithCustomAttribute<TransientLifetimeAttribute>(myAssemblies),
-            //             WithMappings.FromMatchingInterface,
-            //             WithName.Default,
-            //             WithLifetime.Transient);
+            container.RegisterTypes(
+                UnityHelpers.GetTypesWithCustomAttribute<LifecycleSingletonAttribute>(myAssemblies),
+                WithMappings.FromMatchingInterface,
+                WithName.Default,
+                WithLifetime.ContainerControlled,
+                null
+               ).RegisterTypes(
+                        UnityHelpers.GetTypesWithCustomAttribute<LifecycleTransientAttribute>(myAssemblies),
+                        WithMappings.FromMatchingInterface,
+                        WithName.Default,
+                        WithLifetime.Transient);
 
         }
 

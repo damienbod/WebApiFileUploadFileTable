@@ -28,6 +28,9 @@ namespace MvcWebApi.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Just a test method to view all files.
+        /// </summary>
         public ActionResult ViewAllFiles()
         {
             var fileRepository = new FileRepository();

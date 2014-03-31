@@ -4,7 +4,7 @@ using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
-namespace WebAPIDocumentationHelp.Controllers
+namespace WebAPIFileUploadExample.Controllers
 {
     public class ValidateMimeMultipartContentFilter : ActionFilterAttribute
     {

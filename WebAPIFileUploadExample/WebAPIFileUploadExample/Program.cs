@@ -1,6 +1,6 @@
 ﻿using Unity.SelfHostWebApiOwin;
 
-namespace WebAPIDocumentationHelp
+namespace WebAPIFileUploadExample
 {
     class Program
     {

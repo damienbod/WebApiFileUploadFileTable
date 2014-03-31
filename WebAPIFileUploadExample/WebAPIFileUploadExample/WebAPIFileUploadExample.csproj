@@ -7,8 +7,8 @@
     <ProjectGuid>{E4BBE4AA-FBCD-4839-AC24-602196B9AEDE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebAPIDocumentationHelp</RootNamespace>
-    <AssemblyName>WebAPIDocumentationHelp</AssemblyName>
+    <RootNamespace>WebAPIFileUploadExample</RootNamespace>
+    <AssemblyName>WebAPIFileUploadExample</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
